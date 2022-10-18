@@ -1,0 +1,34 @@
+<div class="p-fluid grid">
+    <div class="field col-4">
+        <label>From</label>
+        <p-calendar [disabled]="true" [showTime]="true"  [formControl]="fromDate"></p-calendar>
+    </div>
+    <div class="field col-4">
+        <label>To</label>
+        <p-calendar [minDate]="fromDate.value" [showTime]="true"  [formControl]="toDate"></p-calendar>
+    </div>
+    <div class="field col-fixed" style="width: 200px;">
+        <label>Events</label>
+        <p-multiSelect [options]="events" [formControl]="selectedEvents" defaultLabel="Select a event" optionLabel="name" optionValue="value" display="chip"></p-multiSelect>
+    </div>
+</div>
+<div class="grid">
+    <div class="col-12" *ngIf="eventsRotation.length > 0">
+        <p-table [value]="eventsRotation" responsiveLayout="scroll">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Event</th>
+                    <th>Gametime (UTC)</th>
+                    <th>Localtime</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-event>
+                <tr>
+                    <td>{{event.name}}</td>
+                    <td>{{event.date | date: 'MM/dd/yyyy HH:00': 'UTC'}}</td>
+                    <td>{{event.date | date: 'MM/dd/yyyy HH:00'}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
