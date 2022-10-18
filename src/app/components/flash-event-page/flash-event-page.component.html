@@ -1,13 +1,13 @@
 <div class="p-fluid grid">
-    <div class="field col-4">
+    <div class="field lg:col-4 sm:col-12 pl-2">
         <label>From</label>
         <p-calendar [disabled]="true" [showTime]="true"  [formControl]="fromDate"></p-calendar>
     </div>
-    <div class="field col-4">
+    <div class="field lg:col-4 sm:col-12 pl-2">
         <label>To</label>
         <p-calendar [minDate]="fromDate.value" [showTime]="true"  [formControl]="toDate"></p-calendar>
     </div>
-    <div class="field col-fixed" style="width: 200px;">
+    <div class="field lg:col-fixed sm: col-12" style="width: 200px;">
         <label>Events</label>
         <p-multiSelect [autofocusFilter]="false" [options]="events" [formControl]="selectedEvents" defaultLabel="Select a event" optionLabel="name" optionValue="value" display="chip"></p-multiSelect>
     </div>
