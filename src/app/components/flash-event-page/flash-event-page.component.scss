@@ -1,0 +1,9 @@
+a {
+    &:link, &:visited, &:active {
+        color:var(--teal-300);
+        text-decoration: none;
+    }
+    &:hover {
+        color: var(--teal-700);
+    }
+}

@@ -24,7 +24,7 @@
             </ng-template>
             <ng-template pTemplate="body" let-event>
                 <tr>
-                    <td>{{event.name}}</td>
+                    <td><a target="_blank" [href]="event.link">{{event.name}}<i class="pi pi-external-link p-1" style="font-size: 0.8rem;"></i></a></td>
                     <td>{{event.date | date: 'MM/dd/yyyy HH:00': 'UTC'}}</td>
                     <td>{{event.date | date: 'MM/dd/yyyy HH:00'}}</td>
                 </tr>
