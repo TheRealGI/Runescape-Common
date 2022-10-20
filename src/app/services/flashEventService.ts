@@ -26,7 +26,7 @@ export class FlashEventService {
     public getRotationByTimeSpanAndSelection(to: Date, from: Date, selectedEvents: number[]): FlashEvent[] {
         var lastEvent = this.getLastFlashEventByCurrentHourUTC(from);
         var nextEventsDuringTimespan = this.getEventsDuringTimestamp(to, from, lastEvent);
-        return nextEventsDuringTimespan.filter(event => selectedEvents.includes(event.value))
+        return selectedEvents != null ? nextEventsDuringTimespan.filter(event => selectedEvents.includes(event.value)) : nextEventsDuringTimespan;
     }
 
     private getEventsDuringTimestamp(to: Date, from: Date, lastEvent: number): FlashEvent[] {
