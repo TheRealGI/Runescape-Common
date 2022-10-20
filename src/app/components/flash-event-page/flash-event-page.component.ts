@@ -20,16 +20,18 @@ export class FlashEventPageComponent {
   constructor(private flashEventService: FlashEventService) { 
     this.events = this.flashEventService.events;
     this.initForm();
+    if(this.selectedEvents.valid) this.loadRotation();
 
     this.toDate.valueChanges.subscribe(toDate => {
       if(toDate && this.selectedEvents.valid) {
-        this.eventsRotation = this.flashEventService.getRotationByTimeSpanAndSelection(this.toDate.value, this.fromDate.value, this.selectedEvents.value);
+        this.loadRotation();
       }
     });
 
     this.selectedEvents.valueChanges.subscribe(selectedEvents => {
+      window.localStorage.setItem('selectedEvents', JSON.stringify(selectedEvents));
       if(selectedEvents && selectedEvents.length > 0 && this.toDate.valid) {
-        this.eventsRotation = this.flashEventService.getRotationByTimeSpanAndSelection(this.toDate.value, this.fromDate.value, this.selectedEvents.value);
+        this.loadRotation();
       }
     });
   }
@@ -40,7 +42,11 @@ export class FlashEventPageComponent {
     this.fromDate.setValue(currentDate);
     this.toDate.setValue(new Date(dateTomorrow));
     this.toDate.setValidators(Validators.required);
-    this.selectedEvents.setValue([]);
+    this.selectedEvents.setValue(JSON.parse(window.localStorage.getItem('selectedEvents') as string));
     this.selectedEvents.setValidators(Validators.required);
+  }
+
+  private loadRotation() {
+    this.eventsRotation = this.flashEventService.getRotationByTimeSpanAndSelection(this.toDate.value, this.fromDate.value, this.selectedEvents.value);
   }
 }
