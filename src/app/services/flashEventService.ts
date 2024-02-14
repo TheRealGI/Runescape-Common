@@ -20,7 +20,7 @@ export class FlashEventService {
         {name: "Displaced Energy", value:12, link:"Displaced_Energy"},
         {name: "Evil Bloodwood Tree -Special", value:13, link:"Evil_Bloodwood_Tree"},
         ];
-    public originDate = new Date(Date.UTC(2024,2,14,14));
+    public originDate = new Date(Date.UTC(2024,2,14,18));
 
     constructor(){}
 
