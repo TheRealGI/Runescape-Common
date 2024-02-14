@@ -7,19 +7,20 @@ export class FlashEventService {
     public events = [
         {name: "Spider Swarm", value:0, link:"Spider_Swarm"},
         {name: "Unnatural Outcrop", value:1, link:"Unnatural_Outcrop"},
-        {name: "Demon Stragglers", value:2, link:"Demon_Stragglers"},
-        {name: "Butterfly Swarm", value:3, link:"Butterfly_Swarm"},
-        {name: "King Black Dragon Rampage -Special", value:4, link:"King_Black_Dragon_Rampage"},
-        {name: "Forgotten Soldiers", value:5, link:"Forgotten_Soldiers"},
-        {name: "Surprising Seedlings", value:6, link:"Surprising_Seedlings"},
-        {name: "Hellhound Pack", value:7,link:"Hellhound_Pack"},
-        {name: "Infernal Star -Special", value:8, link:"Infernal_Star"},
-        {name: "Lost Souls", value:9, link:"Lost_Souls"},
-        {name: "Ramokee Incursion", value:10, link:"Ramokee_Incursion"},
-        {name: "Displaced Energy", value:11, link:"Displaced_Energy"},
-        {name: "Evil Bloodwood Tree -Special", value:12, link:"Evil_Bloodwood_Tree"},
+        {name: "Stryke the Wyrm -Special", value:2, link:"Stryke_the_Wyrm"},
+        {name: "Demon Stragglers", value:3, link:"Demon_Stragglers"},
+        {name: "Butterfly Swarm", value:4, link:"Butterfly_Swarm"},
+        {name: "King Black Dragon Rampage -Special", value:5, link:"King_Black_Dragon_Rampage"},
+        {name: "Forgotten Soldiers", value:6, link:"Forgotten_Soldiers"},
+        {name: "Surprising Seedlings", value:7, link:"Surprising_Seedlings"},
+        {name: "Hellhound Pack", value:8,link:"Hellhound_Pack"},
+        {name: "Infernal Star -Special", value:9, link:"Infernal_Star"},
+        {name: "Lost Souls", value:10, link:"Lost_Souls"},
+        {name: "Ramokee Incursion", value:11, link:"Ramokee_Incursion"},
+        {name: "Displaced Energy", value:12, link:"Displaced_Energy"},
+        {name: "Evil Bloodwood Tree -Special", value:13, link:"Evil_Bloodwood_Tree"},
         ];
-    public originDate = new Date(Date.UTC(2022,9,17,11));
+    public originDate = new Date(Date.UTC(2024,2,14,14));
 
     constructor(){}
 
